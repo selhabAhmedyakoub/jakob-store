@@ -5,9 +5,6 @@ A personal e-commerce project built as a final project for the CS50 course.
 
 Project Overview
 
-Briefly describe the purpose of your e-commerce site and the problem it solves (selling your clothing brand online).
-Technologies Used
-
 ## Frontend:
 * HTML
 * CSS
