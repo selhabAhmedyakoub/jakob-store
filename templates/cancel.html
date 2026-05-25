@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block main %}
+<head>
+  <title>Checkout Canceled</title>
+</head>
+<body>
+   <div class="success_cancel_pages">
+      <div>
+        <img class="success_cancel_img" src="/static/cancel_order.png" alt="order_passed">
+      </div>
+      <div>
+        <h1 class="success_cancel_title">Payment is declined</h1>
+        <p class="success_cancel_text">
+         Your payment was declined. Please try again or use a different payment method 
+        </p>
+      </div>
+      <div class="mb-5">
+            <a href="/shop" class="redirect_failure">OK</a>
+      </div>
+   </div>
+</body>
+{% endblock %}

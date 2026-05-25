@@ -1,0 +1,25 @@
+# Secrets
+.env
+sendgrid.env
+
+# Database
+*.db
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Flask
+flask_session/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Virtual environments
+venv/
+.venv/

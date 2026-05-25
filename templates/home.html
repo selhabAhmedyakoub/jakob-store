@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="dhome">
+   <div class="container">
+       <div id="mel">
+             <h3>NEW STOCK - AVAILABLE NOW!</h3> 
+              <a class="nav-link" href="/shop">Shop Now</a>
+       </div>
+        <div id="mer">
+              <img id="model" src="/static/ai-hoodie_nobg.png" alt="AI Hoodie">
+        </div>
+    </div>
+    <div class="container0">
+       <div id="mell">
+         <h3>Look For Models Now</h3> 
+         <p>JakoB is the best choice if you are looking for Excellence</p>
+         {% if not session["user_id"] %}
+         <a class="nav-link" href="/register">Signup Now</a>
+         {% endif %}
+        </div>
+        <div id="merr">
+           <img id="model" src="/static/models.png" alt="Models">
+        </div>
+    </div>
+</div>
+{% endblock %}

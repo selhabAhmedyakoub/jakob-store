@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Sign up
+{% endblock %}
+
+{% block main %}
+<div class="dsignup">
+        <div class="text-content">
+            <h6>/   My Account</h6>
+        </div>
+        <div class="text-content">
+            <h1>My Account</h1>
+        </div>
+        <div class="text-content">
+             <h2>Sign Up</h2>
+        </div>
+        <div id="already1" class="text-content">
+             <h6>You have an account already?</h6>
+             <a  id="ref1" href="/login"><b>Login</b></a>
+        </div> 
+        <form action="/register" method="post" class="registration-form"> 
+            <div class="mb-3">
+                <div class="name-inputs">
+                  <input autocomplete="off" autofocus class="form-control" name="firstname" placeholder="First Name" type="text">
+                  <input autocomplete="off" autofocus class="form-control" name="lastname" placeholder="Last Name" type="text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="email-input">
+                <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="password-input">
+                <input class="form-control " name="password" placeholder="Password" type="password">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="repassword-input">
+                <input class="form-control" name="confirmation" placeholder="Retype Password" type="password">
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="registerBtn" type="submit">Register</button>
+            </div>            
+        </form>
+</div>    
+{% endblock %}

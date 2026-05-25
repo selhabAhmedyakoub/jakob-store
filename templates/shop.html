@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block main %}
+<div class="shop">
+    <div class="product1">
+         <a  id="product1" href="/shoping1" onmouseover="changeImage('product1', '/static/product1_white.png',1.01)" onmouseout="changeImage('product1', '/static/product1_white.png', 1)"><img src="/static/product1_white.png" alt="product1"></a>
+         <h6 class="productdescription">SIGNATURE HOODIE</h6>
+         <h6 class="productprice">£49.99</h6>
+    </div>  
+    <div class="product2">
+         <a  id="product2" href="/shoping2" onmouseover="changeImage('product2', '/static/product3_white.png', 1.01)" onmouseout="changeImage('product2', '/static/product3_white.png', 1)"><img src="/static/product3_white.png" alt="product2"></a>
+         <h6 class="productdescription">SIGNATURE SWEATSHIRT</h6>
+         <h6 class="productprice">£49.99</h6>
+    </div>    
+    <div class="product3">
+         <a  id="product3" href="/shoping3" onmouseover="changeImage('product3', '/static/product2_white.png',1.01)" onmouseout="changeImage('product3', '/static/product2_white.png', 1)"><img src="/static/product2_white.png" alt="product3"></a>
+         <h6 class="productdescription">SIGNATURE T-SHIRT</h6>
+         <h6 class="productprice">£29.99</h6>
+    </div>           
+</div>    
+{% endblock %}

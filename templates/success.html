@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block main %}
+<head>
+  <title>Thanks for your order!</title>
+</head>
+<body>
+   <div class="success_cancel_pages">
+      <div>
+        <img class="success_cancel_img" src="/static/order_passed.png" alt="order_passed">
+      </div>
+      <div>
+        <h1 class="success_cancel_title">Your Products Are On The Way</h1>
+        <p class="success_cancel_text">
+         Thank you for shopping. Your order has been successfully placed and has been processed for delivery
+        </p>
+      </div>
+      <div class="mb-5">
+            <a href="/shop" class="redirect_success">Continue Shopping</a>
+      </div>
+   </div>
+</body>
+{% endblock %}

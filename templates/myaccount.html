@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+
+{% block title %}
+    AboutUs
+{% endblock %}
+
+{% block main %}
+<div class="myaccount">
+    <div class="myaccount1">
+        <div class="text-content">
+           <h6>/   My Account</h6>
+          <h1>My Account</h1>
+        </div>
+        <form action="/account" method="get" class="account-information-form">
+            <div class="account-names">
+              <label for="firstname">First Name:</label>
+              <div id="firstname-display">{{ firstname }}</div>
+              <label for="lastname">Last Name:</label>
+              <div id="lastname-display">{{ lastname }}</div>
+            </div>
+            <div class="account-email">
+              <label for="Email">Email:</label>
+              <div id="email-display">{{ email }}</div>
+            </div>
+        </form>
+    </div>
+    <div class="myaccount2">
+        <form action="/account" method="post" class="account-address-form">
+            <div class="Address_select_informations">
+                <div class="dropdown-group">
+                    <h5>Select Your Country</h5>
+                    <select id="Country" size="1" name="country">
+                        <option value="" selected="selected">Select Your Country</option>
+                    </select>
+                    <h5>Select Your City</h5>
+                    <select id="City" size="1" name="city">
+                        <option value="" selected="selected">Select Your City</option>
+                    </select>  
+                    <h5>Select Your Zip Code</h5>
+                    <select id="Zip" size="1" name="zipcode">
+                        <option value="" selected="selected">Select Your Zip</option>
+                    </select>
+                </div>
+            </div>
+            <div class="address-section">
+                <h5>Type your Address</h5>
+                <div class="account-address">
+                    <input autocomplete="off" autofocus class="form-control" name="address" placeholder="Address" type="text">
+                </div>
+                <div class="mb-4">
+                    <button class="updateBtn" type="submit">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>    
+{% endblock %}

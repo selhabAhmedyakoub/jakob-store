@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+{% block title %}
+    AboutUs
+{% endblock %}
+
+{% block main %}
+<div class="contactt0">
+    <div class="contactt1">
+        <div>
+            <h6>/   Contact</h6>
+            <h1>Contact</h1>
+             <p>Feel free to reach out to us using the contact form below.
+                 We value your feedback and inquiries.
+             </p>
+        </div>
+        <div>
+             <img id="contactt" src="/static/contactt.png" alt="picture">
+        </div>
+    </div>
+    <div class="contactt2">
+        <div>
+            <h1>Send a Message</h1>
+        </div>
+        <form action="/contact" method="post" class="contact-form"> 
+            <div class="mb-4">
+                <div class="name-inputs-contact">
+                  <input autocomplete="off" autofocus class="form-control" name="firstname" placeholder="First Name" type="text">
+                  <input autocomplete="off" autofocus class="form-control" name="lastname" placeholder="Last Name" type="text">
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="email-input-contact">
+                <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Your Email" type="text">
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="message-input">
+                    <textarea class="form-control" name="description" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="mb-4">
+                <button class="contactBtn" type="submit">Send</button>
+            </div>            
+        </form>
+    </div>
+</div>    
+{% endblock %}

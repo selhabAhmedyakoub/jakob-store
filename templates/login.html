@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+<div class="dsignup">
+        <div class="text-content">
+            <h6>/   My Account</h6>
+        </div>
+        <div class="text-content">
+            <h1>My Account</h1>
+        </div>
+        <div class="text-content">
+             <h2>Login</h2>
+        </div>
+        <div id="already2" class="text-content">
+             <h6><span class="faded-text">Don't have account?</span> </h6>
+             <a  id="ref1" class="text-content" href="/register"><b>Sign Up</b></a>
+        </div> 
+        <form action="/login" method="post" class="login-form"> 
+            <div class="mb-3">
+                <div class="email-input">
+                <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="text">
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="password-input">
+                <input class="form-control " name="password" placeholder="Password" type="password">
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="loginbtn" type="submit">Login</button>
+            </div>
+        </form>
+</div>    
+{% endblock %}

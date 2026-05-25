@@ -1,0 +1,74 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Shop
+{% endblock %}
+
+{% block main %}
+<div class="cartTab">
+    <h1>Shopping Cart</h1>
+    <div class="listCart">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price U</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col"></th> 
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.product_name }}</td>
+                    <td>{{ product.size }}</td>
+                    <td>{{ product.color }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>£{{ product.subtotal }}</td>
+                    <td>
+                        <form method="post" action="/remove-from-cart">
+                            <input type="hidden" name="product_id" value="{{ product.product_id }}">
+                            <input type="hidden" name="size" value="{{ product.size }}">
+                            <input type="hidden" name="color" value="{{ product.color }}">
+                            <input type="hidden" name="quantity" value="{{ product.quantity }}">
+                            <button type="submit" class="removeBtn"><i class="fa-solid fa-minus"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Total</th>
+                        <th scope="row">£{{ checkout_total }}</th>
+                    </tr>
+                </thead>
+            </tbody>
+        </table>
+    </div>
+    <div class="mb-5">
+        <form action="/create-checkout-session" method="POST">
+            <button type="submit" class="checkOut" id="checkout-button" {% if not products %}disabled{% endif %}>Check Out</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

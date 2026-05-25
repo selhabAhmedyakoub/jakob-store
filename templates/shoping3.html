@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+
+{% block title %}
+    product_details
+{% endblock %}
+
+{% block main %}
+<div class="shoping">
+    <div class="section1">  
+        <div class="small-images">
+           <div class="small-imagebox"><img class="miniImage" src="/static/product2_white.png" alt="product"></div>
+           <div class="small-imagebox"><img class="miniImage" src="/static/product2_grey.png" alt="product"></div>
+           <div class="small-imagebox"><img class="miniImage" src="/static/product2_black.png" alt="product"></div>
+        </div>
+        <div class="main-image">
+            <input type="hidden" name="product_image" id="product-image-input" value="{{ product.image }}">
+           <div class="main-imagebox"><img class="mainImage" src="{{ product.image }}" alt="product"></div>
+        </div>
+    </div>
+    <div class="section2"> 
+        <form action="/addtocart" method="post" class="shoping-form"> 
+            <div class="description1" > 
+                 <input type="hidden" name="product_id" id="product-id-input" value="{{ product.id }}">
+                 <h3 class="productdescription1">JakoB ©</h3>
+                 <h1 class="product_name">{{ product['name'] }}</h1>
+                 <input type="hidden" name="product_name" id="product-name-input" value="{{ product.name }}">
+                 <h5 class="productprice1">£{{ product['price'] }}</h5>
+                 <input type="hidden" name="product_price" id="product-price-input" value="£{{ product.price }}">
+                 <p class="productdescription1">JakoB © – T-SHIRT with the signature heart emblem on the sleeve</p>
+                 <p class="productdescription1"><strong>Product Details</strong></p>
+                 <p class="productdescription1">{{ product['description'] }}</p>
+                    <div class="color">
+                        <p class="product-color1">Color : <input id="selectedColor" name="color" type="text" readonly></p>
+                        <select class="product-color2" onchange="updateSelectedColor(this)"> 
+                             <option value="WHITE">WHITE</option>
+                             <option value="BLACK">BLACK</option>
+                             <option value="GREY">GREY</option>
+                       </select>
+                    </div>
+                    <div class="size">
+                        <p class="product-size1">Size : <input id="selectedSize" name="size" type="text" readonly></p>
+                       <select class="product-size2" onchange="updateSelectedSize(this)"> 
+                             <option value="Small">Small</option>
+                             <option value="Medium">Medium</option>
+                             <option value="Large">Large</option>
+                             <option value="XL">XL</option>
+                             <option value="2XL">2XL</option>
+                       </select>
+                  </div>
+                   <div class="quantity">
+                        <p class="product-quantity1">Quantity</p>
+                        <div class="product-quantity2">
+                           <div class="quantity-controls">
+                                 <button id="minus-button" onclick="decrementQuantity()" type="button" disabled>-</button>
+                                 <input id="selectedquantity" name="quantity" type="text" value="1">
+                                 <button id="plus-button" onclick="incrementQuantity()" type="button">+</button>
+                           </div>
+                        <div class="mb-5">
+                             <button class="addtocartBtn" type="submit">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </form>      
+    </div>
+</div>    
+<div class="related">
+    <h1>RELATED PRODUCTS</h1>
+</div>
+<div class="shop">
+    <div class="product1">
+         <a  id="product1" href="/shoping1" onmouseover="changeImage('product1', '/static/product1_white.png',1.01)" onmouseout="changeImage('product1', '/static/product1_white.png', 1)"><img src="/static/product1_white.png" alt="product1"></a>
+         <h6 class="productdescription">SIGNATURE HOODIE</h6>
+         <h6 class="productprice">£49.99</h6>
+    </div>  
+    <div class="product2">
+         <a  id="product2" href="/shoping2" onmouseover="changeImage('product2', '/static/product3_white.png', 1.01)" onmouseout="changeImage('product2', '/static/product3_white.png', 1)"><img src="/static/product3_white.png" alt="product2"></a>
+         <h6 class="productdescription">SIGNATURE SWEATSHIRT</h6>
+         <h6 class="productprice">£49.99</h6>
+    </div>    
+    <div class="product3">
+         <a  id="product3" href="/shoping3" onmouseover="changeImage('product3', '/static/product2_white.png',1.01)" onmouseout="changeImage('product3', '/static/product2_white.png', 1)"><img src="/static/product2_white.png" alt="product3"></a>
+         <h6 class="productdescription">SIGNATURE T-SHIRT</h6>
+         <h6 class="productprice">£29.99</h6>
+    </div>           
+</div>    
+{% endblock %}
