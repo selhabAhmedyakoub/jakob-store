@@ -1,6 +1,4 @@
 import mailbox
-import mailcap
-from multiprocessing import AuthenticationError
 from flask import Flask, jsonify, render_template, request
 from flask_mail import Mail, Message
 from sendgrid import SendGridAPIClient
