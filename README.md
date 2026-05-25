@@ -1,5 +1,4 @@
 # JakoB
-#### Video Demo:  <https://www.youtube.com/watch?v=LkxYBsKobxc>
 #### Description:
 # JakoB E-commerce Website
 A personal e-commerce project built as a final project for the CS50 course.
